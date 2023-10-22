@@ -1,0 +1,2060 @@
+<!-- NAVIGATION -->
+<div data-bs-theme="">
+    <app-sidebar></app-sidebar>
+</div>
+<!-- MAIN CONTENT -->
+<div class="main-content">
+    <app-topbar></app-topbar>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="container-fluid">
+
+            <!-- Body -->
+            <div class="header-body">
+                <div class="row align-items-end">
+                    <div class="col">
+
+                        <!-- Pretitle -->
+                        <h6 class="header-pretitle">
+                            Visión general
+                        </h6>
+
+                        <!-- Title -->
+                        <h1 class="header-title text-truncate">
+                            Usuarios
+                        </h1>
+
+                    </div>
+                    <div class="col-auto">
+                        <!-- Button -->
+                        <a [routerLink]="['/usuario/create']" routerLinkActive="active"  class="btn btn-primary ms-2">
+                            Crear Usuario
+                        </a>
+                    </div>
+                </div> <!-- / .row -->
+
+                <div class="row align-items-center">
+                    <div class="col">
+                      <!-- Nav -->
+                    <ul class="nav nav-tabs nav-overflow header-tabs">
+                        <li class="nav-item">
+                          <a class="nav-link text-nowrap active">
+                            Usuarios <span class="badge rounded-pill text-bg-secondary-subtle">1</span>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-nowrap">
+                            Desactivados <span class="badge rounded-pill text-bg-secondary-subtle">0</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+
+            </div> <!-- / .header-body -->
+        </div>
+
+            <!-- Tab content -->
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="contactsListPane" role="tabpanel" aria-labelledby="contactsListTab">
+
+                <!-- Card -->
+                <div class="card" data-list='{"valueNames": ["item-name", "item-title", "item-email", "item-phone", "item-score", "item-company"], "page": 10, "pagination": {"paginationClass": "list-pagination"}}' id="contactsList">
+                  <div class="card-header">
+                    <div class="row align-items-center">
+                      <div class="col">
+
+                        <!-- Form -->
+                        <form>
+                          <div class="input-group input-group-flush input-group-merge input-group-reverse">
+                            <input class="form-control list-search" type="search" placeholder="Buscar">
+                            <span class="input-group-text">
+                              <i class="fe fe-search"></i>
+                            </span>
+                          </div>
+                        </form>
+
+                      </div>
+                      <div class="col-auto me-n3">
+
+                        <!-- Select -->
+                        <form>
+                          <select class="form-select form-select-sm form-control-flush" data-choices='{"searchEnabled": false}'>
+                            <option>5 por página</option>
+                            <option selected>10 por página</option>
+                            <option>Todos</option>
+                          </select>
+                        </form>
+
+                      </div>
+                      <div class="col-auto">
+
+                        <!-- Dropdown -->
+                        <div class="dropdown">
+
+                          <!-- Toggle -->
+                          <button class="btn btn-sm btn-white" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe fe-sliders me-1"></i> Filtros <span class="badge bg-primary ms-1 d-none">0</span>
+                          </button>
+
+                          <!-- Menu -->
+                          <form class="dropdown-menu dropdown-menu-end dropdown-menu-card">
+                            <div class="card-header">
+
+                              <!-- Title -->
+                              <h4 class="card-header-title">
+                                Filtros
+                              </h4>
+
+                              <!-- Link -->
+                              <button class="btn btn-sm btn-link text-reset d-none" type="reset">
+                                <small>Limpiar Filtros</small>
+                              </button>
+
+                            </div>
+                            <div class="card-body">
+
+                              <!-- List group -->
+                              <div class="list-group list-group-flush mt-n4 mb-4">
+                                <div class="list-group-item">
+                                  <div class="row">
+                                    <div class="col">
+
+                                      <!-- Text -->
+                                      <small>Rol</small>
+
+                                    </div>
+                                    <div class="col-auto">
+
+                                      <!-- Select -->
+                                      <select class="form-select form-select-sm" name="item-title" data-choices='{"searchEnabled": false}'>
+                                        <option value="*" selected>Any</option>
+                                        <option value="Designer">Empty</option>
+                                        <option value="Developer">Empty</option>
+                                        <option value="Owner">Empty</option>
+                                        <option value="Founder">Empty</option>
+                                      </select>
+
+                                    </div>
+                                  </div> <!-- / .row -->
+                                </div>
+                                <div class="list-group-item">
+                                  <div class="row">
+                                    <div class="col">
+
+                                      <!-- Text -->
+                                      <small>Empty</small>
+
+                                    </div>
+                                    <div class="col-auto">
+
+                                      <!-- Select -->
+                                      <select class="form-select form-select-sm" name="item-score" data-choices='{"searchEnabled": false}'>
+                                        <option value="*" selected>Any</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                      </select>
+
+                                    </div>
+                                  </div> <!-- / .row -->
+                                </div>
+                              </div>
+
+                              <!-- Button -->
+                              <button class="btn w-100 btn-primary" type="submit">
+                                Aplicar filtro
+                              </button>
+
+                            </div>
+                          </form>
+
+                        </div>
+
+                      </div>
+                    </div> <!-- / .row -->
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table table-sm table-hover table-nowrap card-table">
+                      <thead>
+                        <tr>
+                          <th>
+
+                            <!-- Checkbox -->
+                            <div class="form-check mb-n2">
+                              <input class="form-check-input list-checkbox-all" id="listCheckboxAll" type="checkbox">
+                              <label class="form-check-label" for="listCheckboxAll"></label>
+                            </div>
+
+                          </th>
+                          <th>
+                            <a class="list-sort text-body-secondary" data-sort="item-name" href="#">Nombres</a>
+                          </th>
+                          <th>
+                            <a class="list-sort text-body-secondary" data-sort="item-title" href="#">Apellidos</a>
+                          </th>
+                          <th>
+                            <a class="list-sort text-body-secondary" data-sort="item-email" href="#">Correo</a>
+                          </th>
+                          <th>
+                            <a class="list-sort text-body-secondary" data-sort="item-phone" href="#">Rol</a>
+                          </th>
+                          <th>
+                            <a class="list-sort text-body-secondary" data-sort="item-score" href="#">Estado</a>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="list fs-base">
+                         <ng-container *ngFor="let item of usuarios">
+                          <tr>
+                            <td>
+  
+                              <!-- Checkbox -->
+                              <div class="form-check">
+                                <input class="form-check-input list-checkbox" id="listCheckboxOne" type="checkbox">
+                                <label class="form-check-label" for="listCheckboxOne"></label>
+                              </div>
+  
+                            </td>
+                            <td>
+  
+                              <!-- Avatar -->
+                              <div class="avatar avatar-xs align-middle me-2">
+                                <img class="avatar-img rounded-circle" src="assets/img/avatars/profiles/avatar-1.jpg" alt="...">
+                              </div> 
+                              <a class="item-name text-reset">
+                                {{item.nombres}}
+                              </a>
+  
+                            </td>
+                            <td>
+  
+                              <!-- Text -->
+                              <span class="item-title">
+                                {{item.apellidos}}
+                              </span>
+  
+                            </td>
+                            <td>
+  
+                              <!-- Email -->
+                              <a class="item-email text-reset">
+                                {{item.email}}
+                              </a>
+  
+                            </td>
+                            <td>
+  
+                              <!-- Phone -->
+                              <a class="item-phone text-reset">
+                                {{item.rol}}
+                              </a>
+                            </td>
+                            <td>
+  
+                              <!-- Badge -->
+                              <span class="item-score badge text-bg-success-subtle">Activo</span>
+  
+                            </td>
+                            <td class="text-end">
+  
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                      Acción 1
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                      Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                      Acción 3
+                                  </a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+
+                         </ng-container>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="card-footer d-flex justify-content-between">
+
+                    <!-- Pagination (prev) -->
+                    <ul class="list-pagination-prev pagination pagination-tabs card-pagination">
+                      <li class="page-item">
+                        <a class="page-link ps-0 pe-4 border-end" href="#">
+                          <i class="fe fe-arrow-left me-1"></i> Anterior
+                        </a>
+                      </li>
+                    </ul>
+
+                    <!-- Pagination -->
+                    <ul class="list-pagination pagination pagination-tabs card-pagination"></ul>
+
+                    <!-- Pagination (next) -->
+                    <ul class="list-pagination-next pagination pagination-tabs card-pagination">
+                      <li class="page-item">
+                        <a class="page-link ps-4 pe-0 border-start" href="#">
+                            Siguiente <i class="fe fe-arrow-right ms-1"></i>
+                        </a>
+                      </li>
+                    </ul>
+
+                    <!-- Alert -->
+                    <div class="list-alert alert alert-dark alert-dismissible border fade" role="alert">
+
+                      <!-- Content -->
+                      <div class="row align-items-center">
+                        <div class="col">
+
+                          <!-- Checkbox -->
+                          <div class="form-check">
+                            <input class="form-check-input" id="listAlertCheckbox" type="checkbox" checked disabled>
+                            <label class="form-check-label text-white" for="listAlertCheckbox">
+                              <span class="list-alert-count">0</span> deal(s)
+                            </label>
+                          </div>
+
+                        </div>
+                        <div class="col-auto me-n3">
+
+                          <!-- Button -->
+                          <button class="btn btn-sm bg-white text-white bg-opacity-20 bg-opacity-15-hover">
+                            Editar
+                          </button>
+
+                          <!-- Button -->
+                          <button class="btn btn-sm bg-white text-white bg-opacity-20 bg-opacity-15-hover">
+                            Borrar
+                          </button>
+
+                        </div>
+                      </div> <!-- / .row -->
+
+                      <!-- Close -->
+                      <button type="button" class="list-alert-close btn-close" aria-label="Close"></button>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="tab-pane fade" id="contactsCardsPane" role="tabpanel" aria-labelledby="contactsCardsTab">
+
+                <!-- Cards -->
+                <div data-list='{"valueNames": ["item-name", "item-title", "item-email", "item-phone", "item-score", "item-company"], "page": 9, "pagination": {"paginationClass": "list-pagination"}}' id="contactsCards">
+
+                  <!-- Header -->
+                  <div class="row align-items-center mb-4">
+                    <div class="col">
+
+                      <!-- Form -->
+                      <form>
+                        <div class="input-group input-group-lg input-group-merge input-group-reverse">
+                          <input class="form-control list-search" type="search" placeholder="Buscar">
+                          <span class="input-group-text">
+                            <i class="fe fe-search"></i>
+                          </span>
+                        </div>
+                      </form>
+
+                    </div>
+                    <div class="col-auto me-n3">
+
+                      <!-- Select -->
+                      <form>
+                        <select class="form-select form-select-sm form-control-flush" data-choices='{"searchEnabled": false}'>
+                          <option selected>9 por página</option>
+                          <option>Todos</option>
+                        </select>
+                      </form>
+
+                    </div>
+                    <div class="col-auto">
+
+                      <!-- Dropdown -->
+                      <div class="dropdown">
+
+                        <!-- Toggle -->
+                        <button class="btn btn-sm btn-white" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fe fe-sliders me-1"></i> Filtro <span class="badge bg-primary ms-1 d-none">0</span>
+                        </button>
+
+                        <!-- Menu -->
+                        <form class="dropdown-menu dropdown-menu-end dropdown-menu-card">
+                          <div class="card-header">
+
+                            <!-- Title -->
+                            <h4 class="card-header-title">
+                                Filtros
+                            </h4>
+
+                            <!-- Link -->
+                            <button class="btn btn-sm btn-link text-reset d-none" type="reset">
+                              <small>Limpiar filtros</small>
+                            </button>
+
+                          </div>
+                          <div class="card-body">
+
+                            <!-- List group -->
+                            <div class="list-group list-group-flush mt-n4 mb-4">
+                              <div class="list-group-item">
+                                <div class="row">
+                                  <div class="col">
+
+                                    <!-- Text -->
+                                    <small>Rol</small>
+
+                                  </div>
+                                  <div class="col-auto">
+
+                                    <!-- Select -->
+                                    <select class="form-select form-select-sm" name="item-title" data-choices='{"searchEnabled": false}'>
+                                      <option value="*" selected>Any</option>
+                                      <option value="Empty">Empty</option>
+                                      <option value="Empty">Empty</option>
+                                      <option value="Empty">Empty</option>
+                                      <option value="Empty">Empty</option>
+                                    </select>
+
+                                  </div>
+                                </div> <!-- / .row -->
+                              </div>
+                              <div class="list-group-item">
+                                <div class="row">
+                                  <div class="col">
+
+                                    <!-- Text -->
+                                    <small>Empty</small>
+
+                                  </div>
+                                  <div class="col-auto">
+
+                                    <!-- Select -->
+                                    <select class="form-select form-select-sm" name="item-score" data-choices='{"searchEnabled": false}'>
+                                      <option value="*" selected>Any</option>
+                                      <option value="1">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                      <option value="5">5</option>
+                                    </select>
+
+                                  </div>
+                                </div> <!-- / .row -->
+                              </div>
+                            </div>
+
+                            <!-- Button -->
+                            <button class="btn w-100 btn-primary" type="submit">
+                                Aplicar filtro
+                            </button>
+
+                          </div>
+                        </form>
+
+                      </div>
+
+                    </div>
+                  </div> <!-- / .row -->
+
+                  <!-- Body -->
+                  <div class="list row">
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckboxOne">
+                                <label class="form-check-label" for="cardsCheckboxOne"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 1
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Dianna Smiley</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Designer</span> at <span class="item-company">Twitter</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Twitter</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-danger-subtle">1/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckboxTwo">
+                                <label class="form-check-label" for="cardsCheckboxTwo"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Action
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Ab Hadley</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Developer</span> at <span class="item-company">Google</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Google</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-success-subtle">8/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckBoxThree">
+                                <label class="form-check-label" for="cardsCheckBoxThree"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Action
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Adolfo Hess</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Owner</span> at <span class="item-company">Google</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Google</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-success-subtle">7/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckboxFour">
+                                <label class="form-check-label" for="cardsCheckboxFour"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Action
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-4.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Daniela Dewitt</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Designer</span> at <span class="item-position">Twitch</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Twitch</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-warning-subtle">4/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckboxFive">
+                                <label class="form-check-label" for="cardsCheckboxFive"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Action
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-5.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Miyah Myles</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Founder</span> at <span class="item-company">Facebook</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Facebook</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-danger-subtle">3/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckBoxSix">
+                                <label class="form-check-label" for="cardsCheckBoxSix"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Action
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-6.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Ryu Duke</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Owner</span> at <span class="item-company">Netflix</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Netflix</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-warning-subtle">6/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckboxSeven">
+                                <label class="form-check-label" for="cardsCheckboxSeven"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Action
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-7.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Glen Rouse</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Designer</span> at <span class="item-position">Netflix</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Netflix</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-success-subtle">9/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckboxEight">
+                                <label class="form-check-label" for="cardsCheckboxEight"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Action
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Miyah Myles</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Designer</span> at <span class="item-company">Google</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Google</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-success-subtle">10/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckboxNine">
+                                <label class="form-check-label" for="cardsCheckboxNine"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Action
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-2.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Ryu Duke</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Developer</span> at <span class="item-company">Microsoft</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Microsoft</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-warning-subtle">6/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckBoxTen">
+                                <label class="form-check-label" for="cardsCheckBoxTen"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Action
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-3.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Glen Rouse</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Owner</span> at <span class="item-company">Uber</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Uber</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-danger-subtle">2/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckboxEleven">
+                                <label class="form-check-label" for="cardsCheckboxEleven"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Action
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-4.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Dianna Smiley</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Designer</span> at <span class="item-position">Twitter</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Twitter</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-warning-subtle">6/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckboxTwelve">
+                                <label class="form-check-label" for="cardsCheckboxTwelve"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Action
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-5.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Daniela Dewitt</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Founder</span> at <span class="item-company">Netflix</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Netflix</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-success-subtle">8/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckBoxThirteen">
+                                <label class="form-check-label" for="cardsCheckBoxThirteen"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Action
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-6.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Ab Hadley</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Owner</span> at <span class="item-company">Lyft</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Lyft</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-warning-subtle">4/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                      <!-- Card -->
+                      <div class="card">
+                        <div class="card-body">
+
+                          <!-- Header -->
+                          <div class="row align-items-center">
+                            <div class="col">
+
+                              <!-- Checkbox -->
+                              <div class="form-check form-check-circle">
+                                <input class="form-check-input list-checkbox" type="checkbox" id="cardsCheckboxFourteen">
+                                <label class="form-check-label" for="cardsCheckboxFourteen"></label>
+                              </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                              <!-- Dropdown -->
+                              <div class="dropdown">
+                                <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="#!" class="dropdown-item">
+                                    Action
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 2
+                                  </a>
+                                  <a href="#!" class="dropdown-item">
+                                    Acción 3
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Image -->
+                          <a href="profile-posts.html" class="avatar avatar-xl card-avatar">
+                            <img src="assets/img/avatars/profiles/avatar-7.jpg" class="avatar-img rounded-circle" alt="...">
+                          </a>
+
+                          <!-- Body -->
+                          <div class="text-center mb-5">
+
+                            <!-- Heading -->
+                            <h2 class="card-title">
+                              <a class="item-name" href="profile-posts.html">Adolfo Hess</a>
+                            </h2>
+
+                            <!-- Text -->
+                            <p class="small text-body-secondary mb-3">
+                              <span class="item-title">Designer</span> at <span class="item-position">Google</span>
+                            </p>
+
+                            <!-- Buttons -->
+                            <a class="btn btn-sm btn-white" href="tel:tel:1-123-456-7890">
+                              <i class="fe fe-phone me-1"></i> Call
+                            </a>
+                            <a class="btn btn-sm btn-white" href="mailto:john.doe@company.com">
+                              <i class="fe fe-mail me-1"></i> Email
+                            </a>
+
+                          </div>
+
+                          <!-- Divider -->
+                          <hr class="card-divider mb-0">
+
+                          <!-- List group -->
+                          <div class="list-group list-group-flush mb-n3">
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Company</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Text -->
+                                  <small>Google</small>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                              <div class="row">
+                                <div class="col">
+
+                                  <!-- Text -->
+                                  <small>Lead Score</small>
+
+                                </div>
+                                <div class="col-auto">
+
+                                  <!-- Badge -->
+                                  <span class="item-score badge text-bg-success-subtle">7/10</span>
+
+                                </div>
+                              </div> <!-- / .row -->
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- Pagination -->
+                  <div class="row g-0">
+
+                    <!-- Pagination (prev) -->
+                    <ul class="col list-pagination-prev pagination pagination-tabs justify-content-start">
+                      <li class="page-item">
+                        <a class="page-link" href="#">
+                          <i class="fe fe-arrow-left me-1"></i> Anterior
+                        </a>
+                      </li>
+                    </ul>
+
+                    <!-- Pagination -->
+                    <ul class="col list-pagination pagination pagination-tabs justify-content-center"></ul>
+
+                    <!-- Pagination (next) -->
+                    <ul class="col list-pagination-next pagination pagination-tabs justify-content-end">
+                      <li class="page-item">
+                        <a class="page-link" href="#">
+                            Siguiente <i class="fe fe-arrow-right ms-1"></i>
+                        </a>
+                      </li>
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+        
+    </div> <!-- / .header -->

@@ -1,0 +1,127 @@
+<!-- NAVIGATION -->
+<div data-bs-theme="">
+    <app-sidebar></app-sidebar>
+</div>
+<!-- MAIN CONTENT -->
+<div class="main-content">
+    <app-topbar></app-topbar>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="container-fluid">
+
+            <!-- Body -->
+            <div class="header-body">
+                <div class="row align-items-end">
+                    <div class="col">
+
+                        <!-- Pretitle -->
+                        <h6 class="header-pretitle">
+                            Visión general
+                        </h6>
+
+                        <!-- Title -->
+                        <h1 class="header-title text-truncate">
+                            Crear Usuario
+                        </h1>
+                    </div>
+                </div> <!-- / .row -->
+
+
+            </div> <!-- / .header-body -->
+            <!-- Form -->
+            <form>
+                <hr class="my-5">
+
+                <div class="card mb-5 mb-xl-10">
+
+                    <!-- Card -->
+                    <div class="card-body pt-3">
+                        <!-- List group -->
+                        <div class="list-group list-grouph my-n5">
+                            <div class="list-group-item">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <!-- Label -->
+                                        <label class="required">
+                                            Nombres y Apellidos
+                                        </label>
+
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="row">
+                                            <div class="col-lg-6 fv-row">
+                                                <input type="text" placeholder="Nombres"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 ng-pristine ng-valid ng-touched"
+                                                    [(ngModel)]="usuario.nombres" name="nombres">
+                                            </div>
+                                            <div class="col-lg-6 fv-row">
+                                                <input type="text" placeholder="Apellidos"
+                                                    class="form-control form-control-lg form-control-solid ng-pristine ng-valid ng-touched"
+                                                    [(ngModel)]="usuario.apellidos" name="apellidos">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <!-- Title -->
+                                        <label class="required">
+                                            Correo electrónico
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="row">
+                                            <div class="col-lg fv-row">
+                                                <input type="text" placeholder="example@duoc.cl"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 ng-pristine ng-valid ng-touched"
+                                                    [(ngModel)]="usuario.email" name="email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <!-- Title -->
+                                        <label class="required">
+                                            Rol
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="row">
+                                            <div class="col-lg fv-row">
+                                                <select class="form-select select2 select2-hidden-accessible" [(ngModel)]="usuario.rol" name="rol">
+                                                    <option selected disabled value="">Seleccionar</option>
+                                                    <option value="Administrador">Administrador</option>
+                                                    <option value="Rol 2">Rol 2</option>
+                                                    <option value="Rol 3">Rol 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="row">
+                                            <div class="col-lg fv-row bg-light text-right">
+                                                <!-- Input -->
+                                                <button type="button" class="btn btn-primary" (click)="registrar()">Crear Usuario</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> <!-- / .header -->
